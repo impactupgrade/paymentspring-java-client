@@ -34,4 +34,13 @@ public class Event implements AbstractModel {
   public void setPayloadJson(String payloadJson) {
     this.payloadJson = payloadJson;
   }
+
+  @Override
+  public String toString() {
+    return "Event{" +
+        "eventResource='" + eventResource + '\'' +
+        ", eventType='" + eventType + '\'' +
+        ", payloadJson='" + payloadJson + '\'' +
+        '}';
+  }
 }

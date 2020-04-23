@@ -68,4 +68,16 @@ public class Subscription implements AbstractModel {
   public void setMetadata(Map<String, String> metadata) {
     this.metadata = metadata;
   }
+
+  @Override
+  public String toString() {
+    return "Subscription{" +
+        "id='" + id + '\'' +
+        ", amount=" + amount +
+        ", createdAt=" + createdAt +
+        ", customerId='" + customerId + '\'' +
+        ", frequency='" + frequency + '\'' +
+        ", metadata=" + metadata +
+        '}';
+  }
 }

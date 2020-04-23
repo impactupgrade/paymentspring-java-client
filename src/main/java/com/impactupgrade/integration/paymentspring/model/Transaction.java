@@ -79,4 +79,17 @@ public class Transaction implements AbstractModel {
   public void setMetadata(Map<String, String> metadata) {
     this.metadata = metadata;
   }
+
+  @Override
+  public String toString() {
+    return "Transaction{" +
+        "id='" + id + '\'' +
+        ", amountFailed=" + amountFailed +
+        ", amountSettled=" + amountSettled +
+        ", createdAt=" + createdAt +
+        ", customerId='" + customerId + '\'' +
+        ", description='" + description + '\'' +
+        ", metadata=" + metadata +
+        '}';
+  }
 }
