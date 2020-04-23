@@ -11,11 +11,13 @@ public class Subscription implements AbstractModel {
 
   private String id;
 
+  private Long amount;
   @JsonProperty("created_at")
   @JsonDeserialize(using = SubscriptionDateJsonDeserializer.class)
   private Date createdAt;
   @JsonProperty("customer_id")
   private String customerId;
+  private String frequency;
 
   private Map<String, String> metadata;
 
@@ -25,6 +27,14 @@ public class Subscription implements AbstractModel {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public Long getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Long amount) {
+    this.amount = amount;
   }
 
   public Date getCreatedAt() {
@@ -41,6 +51,14 @@ public class Subscription implements AbstractModel {
 
   public void setCustomerId(String customerId) {
     this.customerId = customerId;
+  }
+
+  public String getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(String frequency) {
+    this.frequency = frequency;
   }
 
   public Map<String, String> getMetadata() {

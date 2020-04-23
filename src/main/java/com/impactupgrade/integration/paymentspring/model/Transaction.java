@@ -11,11 +11,16 @@ public class Transaction implements AbstractModel {
 
   private String id;
 
+  @JsonProperty("amount_failed")
+  private Long amountFailed;
+  @JsonProperty("amount_settled")
+  private Long amountSettled;
   @JsonProperty("created_at")
   @JsonDeserialize(using = TransactionDateJsonDeserializer.class)
   private Date createdAt;
   @JsonProperty("customer_id")
   private String customerId;
+  private String description;
 
   private Map<String, String> metadata;
 
@@ -25,6 +30,22 @@ public class Transaction implements AbstractModel {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public Long getAmountFailed() {
+    return amountFailed;
+  }
+
+  public void setAmountFailed(Long amountFailed) {
+    this.amountFailed = amountFailed;
+  }
+
+  public Long getAmountSettled() {
+    return amountSettled;
+  }
+
+  public void setAmountSettled(Long amountSettled) {
+    this.amountSettled = amountSettled;
   }
 
   public Date getCreatedAt() {
@@ -41,6 +62,14 @@ public class Transaction implements AbstractModel {
 
   public void setCustomerId(String customerId) {
     this.customerId = customerId;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public Map<String, String> getMetadata() {
