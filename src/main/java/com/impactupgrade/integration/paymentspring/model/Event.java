@@ -1,6 +1,7 @@
 package com.impactupgrade.integration.paymentspring.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class Event implements AbstractModel {
 
@@ -9,7 +10,7 @@ public class Event implements AbstractModel {
   @JsonProperty("event_type")
   private String eventType;
   @JsonProperty("payload")
-  private String payloadJson;
+  private JsonNode payloadJson;
 
   public String getEventResource() {
     return eventResource;
@@ -27,11 +28,11 @@ public class Event implements AbstractModel {
     this.eventType = eventType;
   }
 
-  public String getPayloadJson() {
+  public JsonNode getPayloadJson() {
     return payloadJson;
   }
 
-  public void setPayloadJson(String payloadJson) {
+  public void setPayloadJson(JsonNode payloadJson) {
     this.payloadJson = payloadJson;
   }
 
