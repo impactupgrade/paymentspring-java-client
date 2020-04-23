@@ -11,4 +11,8 @@ public class PaymentSpringClient {
   public CustomersClient customers() {
     return new CustomersClient(apiKey);
   }
+
+  public SubscriptionsClient subscriptions() {
+    return new SubscriptionsClient(apiKey);
+  }
 }
