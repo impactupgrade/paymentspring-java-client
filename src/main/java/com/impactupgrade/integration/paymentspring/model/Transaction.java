@@ -11,16 +11,30 @@ public class Transaction implements AbstractModel {
 
   private String id;
 
+  @JsonProperty("address_1")
+  private String address1;
+  @JsonProperty("address_2")
+  private String address2;
   @JsonProperty("amount_failed")
   private Long amountFailed;
   @JsonProperty("amount_settled")
   private Long amountSettled;
+  private String city;
+  private String country;
   @JsonProperty("created_at")
   @JsonDeserialize(using = TransactionDateJsonDeserializer.class)
   private Date createdAt;
   @JsonProperty("customer_id")
   private String customerId;
   private String description;
+  private String email;
+  @JsonProperty("first_name")
+  private String firstName;
+  @JsonProperty("last_name")
+  private String lastName;
+  private String phone;
+  private String state;
+  private String zip;
 
   private Map<String, String> metadata;
 
@@ -30,6 +44,22 @@ public class Transaction implements AbstractModel {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public String getAddress1() {
+    return address1;
+  }
+
+  public void setAddress1(String address1) {
+    this.address1 = address1;
+  }
+
+  public String getAddress2() {
+    return address2;
+  }
+
+  public void setAddress2(String address2) {
+    this.address2 = address2;
   }
 
   public Long getAmountFailed() {
@@ -46,6 +76,22 @@ public class Transaction implements AbstractModel {
 
   public void setAmountSettled(Long amountSettled) {
     this.amountSettled = amountSettled;
+  }
+
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
   }
 
   public Date getCreatedAt() {
@@ -72,6 +118,54 @@ public class Transaction implements AbstractModel {
     this.description = description;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public String getState() {
+    return state;
+  }
+
+  public void setState(String state) {
+    this.state = state;
+  }
+
+  public String getZip() {
+    return zip;
+  }
+
+  public void setZip(String zip) {
+    this.zip = zip;
+  }
+
   public Map<String, String> getMetadata() {
     return metadata;
   }
@@ -83,13 +177,23 @@ public class Transaction implements AbstractModel {
   @Override
   public String toString() {
     return "Transaction{" +
-        "id='" + id + '\'' +
-        ", amountFailed=" + amountFailed +
-        ", amountSettled=" + amountSettled +
-        ", createdAt=" + createdAt +
-        ", customerId='" + customerId + '\'' +
-        ", description='" + description + '\'' +
-        ", metadata=" + metadata +
-        '}';
+            "id='" + id + '\'' +
+            ", address1='" + address1 + '\'' +
+            ", address2='" + address2 + '\'' +
+            ", amountFailed=" + amountFailed +
+            ", amountSettled=" + amountSettled +
+            ", city='" + city + '\'' +
+            ", country='" + country + '\'' +
+            ", createdAt=" + createdAt +
+            ", customerId='" + customerId + '\'' +
+            ", description='" + description + '\'' +
+            ", email='" + email + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", phone='" + phone + '\'' +
+            ", state='" + state + '\'' +
+            ", zip='" + zip + '\'' +
+            ", metadata=" + metadata +
+            '}';
   }
 }
