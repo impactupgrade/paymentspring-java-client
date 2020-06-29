@@ -8,6 +8,8 @@
   <artifactId>paymentspring-java-client</artifactId>
   <version>1.0.0.Final</version>
 
+  <name>paymentspring-java-client</name>
+  <description>TODO</description>
   <url>https://github.com/impactupgrade/paymentspring-java-client</url>
   <scm>
     <url>https://github.com/impactupgrade/paymentspring-java-client</url>
