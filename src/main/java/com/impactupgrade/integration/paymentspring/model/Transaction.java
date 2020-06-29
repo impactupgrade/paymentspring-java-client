@@ -36,6 +36,11 @@ public class Transaction implements AbstractModel {
   private String state;
   private String zip;
 
+  @JsonProperty("card_owner_name")
+  private String cardOwnerName;
+  @JsonProperty("account_holder_name")
+  private String accountHolderName;
+
   private Map<String, String> metadata;
 
   public String getId() {
@@ -174,26 +179,44 @@ public class Transaction implements AbstractModel {
     this.metadata = metadata;
   }
 
+  public String getCardOwnerName() {
+    return cardOwnerName;
+  }
+
+  public void setCardOwnerName(String cardOwnerName) {
+    this.cardOwnerName = cardOwnerName;
+  }
+
+  public String getAccountHolderName() {
+    return accountHolderName;
+  }
+
+  public void setAccountHolderName(String accountHolderName) {
+    this.accountHolderName = accountHolderName;
+  }
+
   @Override
   public String toString() {
     return "Transaction{" +
-            "id='" + id + '\'' +
-            ", address1='" + address1 + '\'' +
-            ", address2='" + address2 + '\'' +
-            ", amountFailed=" + amountFailed +
-            ", amountSettled=" + amountSettled +
-            ", city='" + city + '\'' +
-            ", country='" + country + '\'' +
-            ", createdAt=" + createdAt +
-            ", customerId='" + customerId + '\'' +
-            ", description='" + description + '\'' +
-            ", email='" + email + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", phone='" + phone + '\'' +
-            ", state='" + state + '\'' +
-            ", zip='" + zip + '\'' +
-            ", metadata=" + metadata +
-            '}';
+        "id='" + id + '\'' +
+        ", address1='" + address1 + '\'' +
+        ", address2='" + address2 + '\'' +
+        ", amountFailed=" + amountFailed +
+        ", amountSettled=" + amountSettled +
+        ", city='" + city + '\'' +
+        ", country='" + country + '\'' +
+        ", createdAt=" + createdAt +
+        ", customerId='" + customerId + '\'' +
+        ", description='" + description + '\'' +
+        ", email='" + email + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", phone='" + phone + '\'' +
+        ", state='" + state + '\'' +
+        ", zip='" + zip + '\'' +
+        ", cardOwnerName='" + cardOwnerName + '\'' +
+        ", accountHolderName='" + accountHolderName + '\'' +
+        ", metadata=" + metadata +
+        '}';
   }
 }
