@@ -14,8 +14,8 @@
   </scm>
   <licenses>
     <license>
-      <name>GNU LESSER GENERAL PUBLIC LICENSE V3</name>
-      <url>https://github.com/impactupgrade/paymentspring-java-client/blob/master/lgpl-3.0.txt</url>
+      <name>Apache License 2.0</name>
+      <url>https://github.com/impactupgrade/paymentspring-java-client/blob/master/LICENSE</url>
     </license>
   </licenses>
   <developers>
