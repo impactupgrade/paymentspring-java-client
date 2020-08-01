@@ -15,6 +15,8 @@ public class Subscription implements AbstractModel {
   @JsonProperty("created_at")
   @JsonDeserialize(using = SubscriptionDateJsonDeserializer.class)
   private Date createdAt;
+  @JsonProperty("plan_id")
+  private String planId;
   @JsonProperty("customer_id")
   private String customerId;
   private String frequency;
@@ -43,6 +45,14 @@ public class Subscription implements AbstractModel {
 
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public String getPlanId() {
+    return planId;
+  }
+
+  public void setPlanId(String planId) {
+    this.planId = planId;
   }
 
   public String getCustomerId() {
@@ -75,6 +85,7 @@ public class Subscription implements AbstractModel {
         "id='" + id + '\'' +
         ", amount=" + amount +
         ", createdAt=" + createdAt +
+        ", planId='" + planId + '\'' +
         ", customerId='" + customerId + '\'' +
         ", frequency='" + frequency + '\'' +
         ", metadata=" + metadata +
