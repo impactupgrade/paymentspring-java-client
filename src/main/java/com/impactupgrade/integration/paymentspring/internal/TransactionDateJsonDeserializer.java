@@ -12,14 +12,11 @@ import java.util.Date;
 
 public class TransactionDateJsonDeserializer  extends JsonDeserializer<Date> {
 
-  // TODO: test and make sure UTC works
-  private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
-
   @Override
   public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
     String date = jsonParser.getText();
     try {
-      return SDF.parse(date);
+      return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(date);
     } catch (ParseException e) {
       throw new RuntimeException(e);
     }
