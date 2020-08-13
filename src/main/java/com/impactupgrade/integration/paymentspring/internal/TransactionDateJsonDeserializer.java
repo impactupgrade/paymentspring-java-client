@@ -16,7 +16,7 @@ public class TransactionDateJsonDeserializer  extends JsonDeserializer<Date> {
   public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
     String date = jsonParser.getText();
     try {
-      return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(date);
+      return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z").parse(date);
     } catch (ParseException e) {
       throw new RuntimeException(e);
     }
