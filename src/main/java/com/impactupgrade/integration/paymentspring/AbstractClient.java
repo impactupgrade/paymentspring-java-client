@@ -10,6 +10,7 @@ public abstract class AbstractClient {
   protected final String bearerToken;
 
   protected final WebTarget target;
+  protected final WebTarget targetv2;
 
   protected AbstractClient(String apiKey) {
     this.bearerToken = "Basic " + Base64.getEncoder().encodeToString((apiKey + ":" + apiKey).getBytes());
@@ -23,5 +24,6 @@ public abstract class AbstractClient {
         .build();
 
     target = client.target("https://api.paymentspring.com/api/v1");
+    targetv2 = client.target("https://api.paymentspring.com/api/v2");
   }
 }
