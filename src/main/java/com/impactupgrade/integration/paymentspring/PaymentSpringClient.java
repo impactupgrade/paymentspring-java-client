@@ -19,4 +19,8 @@ public class PaymentSpringClient {
   public PlansClient plans() {
     return new PlansClient(apiKey);
   }
+
+  public TransactionsClient transactions() {
+    return new TransactionsClient(apiKey);
+  }
 }
