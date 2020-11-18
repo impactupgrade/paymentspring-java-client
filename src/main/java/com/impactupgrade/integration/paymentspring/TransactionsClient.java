@@ -5,8 +5,12 @@ import com.impactupgrade.integration.paymentspring.model.TransactionList;
 
 import java.util.List;
 
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Form;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 public class TransactionsClient extends AbstractClient {
 
@@ -25,13 +29,20 @@ public class TransactionsClient extends AbstractClient {
         .get(Transaction.class);
   }
 
-  public List<Transaction> getAllTransactions() {
-    return transactionsTargetV1
-        .queryParam("limit", "25") // I beleive these are set by default if not included. Could be wrong though
-        .queryParam("offset", "0")
+  public TransactionList getAllTransactions(String startDate, String endDate, int limit, int offset) {
+    Form form = new Form();
+    form.param("start_date", startDate).param("end_date", endDate);
+    
+    Response response = transactionsTargetV2
+        .path("search")
+        .queryParam("limit", limit)
+        .queryParam("offset", offset)
         .request(MediaType.APPLICATION_JSON)
-        .header("Authorization", bearerToken)
-        .get(TransactionList.class)
-        .getList();
+        .header(HttpHeaders.AUTHORIZATION, bearerToken)
+        .post(Entity.form(form));
+
+    return response.readEntity(TransactionList.class);
+
+
   }
 }
