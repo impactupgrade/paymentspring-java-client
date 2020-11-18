@@ -29,14 +29,14 @@ public class TransactionsClient extends AbstractClient {
         .get(Transaction.class);
   }
 
-  public TransactionList getAllTransactions(String startDate, String endDate, int limit, int offset) {
+  public TransactionList getTransactionsBetweenDates(String startDate, String endDate, int limit, int page) {
     Form form = new Form();
     form.param("start_date", startDate).param("end_date", endDate);
     
     Response response = transactionsTargetV2
         .path("search")
+        .queryParam("page", page) // page number sets the offset: with limit 100, page=1 returns transactions 0-99, page=2 returns 100-199, etc...
         .queryParam("limit", limit)
-        .queryParam("offset", offset)
         .request(MediaType.APPLICATION_JSON)
         .header(HttpHeaders.AUTHORIZATION, bearerToken)
         .post(Entity.form(form));
