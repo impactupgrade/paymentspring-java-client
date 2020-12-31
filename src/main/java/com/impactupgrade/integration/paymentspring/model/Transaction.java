@@ -2,7 +2,7 @@ package com.impactupgrade.integration.paymentspring.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.impactupgrade.integration.paymentspring.internal.TransactionDateJsonDeserializer;
+import com.impactupgrade.integration.paymentspring.internal.DateJsonDeserializer;
 
 import java.util.Date;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class Transaction implements AbstractModel {
   private String city;
   private String country;
   @JsonProperty("created_at")
-  @JsonDeserialize(using = TransactionDateJsonDeserializer.class)
+  @JsonDeserialize(using = DateJsonDeserializer.class)
   private Date createdAt;
   @JsonProperty("customer_id")
   private String customerId;

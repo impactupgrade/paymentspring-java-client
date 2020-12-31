@@ -2,7 +2,7 @@ package com.impactupgrade.integration.paymentspring.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.impactupgrade.integration.paymentspring.internal.SubscriptionDateJsonDeserializer;
+import com.impactupgrade.integration.paymentspring.internal.DateJsonDeserializer;
 
 import java.util.Date;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class Subscription implements AbstractModel {
 
   private Long amount;
   @JsonProperty("created_at")
-  @JsonDeserialize(using = SubscriptionDateJsonDeserializer.class)
+  @JsonDeserialize(using = DateJsonDeserializer.class)
   private Date createdAt;
   @JsonProperty("plan_id")
   private String planId;
