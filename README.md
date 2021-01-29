@@ -1,6 +1,6 @@
 # paymentspring-java-client
 
-paymentspring-java-client provides a Java client for the PaymentSpring API
+A work-in-progress Java wrapper around the PaymentSpring API. *However, we have to be super blunt about this one. We would **not** recommend PaymentSpring as a payment gateway. However, throwing this out there anyway...*
 
 ## Impact Upgrade
 
