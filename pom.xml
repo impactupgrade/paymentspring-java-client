@@ -6,7 +6,7 @@
 
   <groupId>com.impactupgrade.integration</groupId>
   <artifactId>paymentspring-java-client</artifactId>
-  <version>1.0.6.Final</version>
+  <version>1.0.7-SNAPSHOT</version>
 
   <name>paymentspring-java-client</name>
   <description>TODO</description>
