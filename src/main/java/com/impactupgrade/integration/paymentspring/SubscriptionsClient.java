@@ -5,6 +5,7 @@ import com.impactupgrade.integration.paymentspring.model.SubscriptionList;
 
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class SubscriptionsClient extends AbstractClient {
 
@@ -41,5 +42,13 @@ public class SubscriptionsClient extends AbstractClient {
         .filter(subscription -> subscriptionId.equalsIgnoreCase(subscription.getId()))
         .findFirst()
         .orElse(null);
+  }
+
+  public List<Subscription> getAll() {
+    return subscriptionsTarget
+        .request(MediaType.APPLICATION_JSON)
+        .header("Authorization", bearerToken)
+        .get(SubscriptionList.class)
+        .getList();
   }
 }
