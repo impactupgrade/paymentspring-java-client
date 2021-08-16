@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.impactupgrade.integration.paymentspring.internal.DateJsonDeserializer;
 
 import java.util.Date;
+import java.util.Map;
 
 public class Subscription implements AbstractModel {
 
@@ -14,6 +15,9 @@ public class Subscription implements AbstractModel {
   @JsonProperty("created_at")
   @JsonDeserialize(using = DateJsonDeserializer.class)
   private Date createdAt;
+  @JsonProperty("next_billing")
+  @JsonDeserialize(using = DateJsonDeserializer.class)
+  private Date nextBilling;
   @JsonProperty("plan_id")
   private String planId;
   @JsonProperty("customer_id")
@@ -21,7 +25,7 @@ public class Subscription implements AbstractModel {
   private String frequency;
 
   // TODO: PS screwed this up in a recent update (empty values are coming through as "" instead of {}). Disabling for now...
-//  private Map<String, String> metadata;
+  private Map<String, String> metadata;
 
   public String getId() {
     return id;
@@ -45,6 +49,14 @@ public class Subscription implements AbstractModel {
 
   public void setCreatedAt(Date createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public Date getNextBilling() {
+    return nextBilling;
+  }
+
+  public void setNextBilling(Date nextBilling) {
+    this.nextBilling = nextBilling;
   }
 
   public String getPlanId() {
@@ -71,13 +83,13 @@ public class Subscription implements AbstractModel {
     this.frequency = frequency;
   }
 
-//  public Map<String, String> getMetadata() {
-//    return metadata;
-//  }
-//
-//  public void setMetadata(Map<String, String> metadata) {
-//    this.metadata = metadata;
-//  }
+  public Map<String, String> getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+  }
 
   @Override
   public String toString() {
@@ -85,10 +97,11 @@ public class Subscription implements AbstractModel {
         "id='" + id + '\'' +
         ", amount=" + amount +
         ", createdAt=" + createdAt +
+        ", nextBilling=" + nextBilling +
         ", planId='" + planId + '\'' +
         ", customerId='" + customerId + '\'' +
         ", frequency='" + frequency + '\'' +
-//        ", metadata=" + metadata +
+        ", metadata=" + metadata +
         '}';
   }
 }
