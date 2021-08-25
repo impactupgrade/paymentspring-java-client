@@ -13,7 +13,7 @@ public abstract class AbstractClient {
   protected final WebTarget targetv2;
 
   protected AbstractClient(String apiKey) {
-    this.bearerToken = "Basic " + Base64.getEncoder().encodeToString((apiKey + ":" + apiKey).getBytes());
+    this.bearerToken = "Basic " + Base64.getEncoder().encodeToString((apiKey + ":").getBytes());
 
 //    Logger logger = Logger.getLogger(this.getClass().getName());
 //    Feature loggingFeature = new LoggingFeature(

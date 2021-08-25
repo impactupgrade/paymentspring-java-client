@@ -23,6 +23,8 @@ public class Subscription implements AbstractModel {
   @JsonProperty("customer_id")
   private String customerId;
   private String frequency;
+  @JsonProperty("ends_after")
+  private String endsAfter;
 
   // TODO: PS screwed this up in a recent update (empty values are coming through as "" instead of {}). Disabling for now...
   private Map<String, String> metadata;
@@ -83,6 +85,14 @@ public class Subscription implements AbstractModel {
     this.frequency = frequency;
   }
 
+  public String getEndsAfter() {
+    return endsAfter;
+  }
+
+  public void setEndsAfter(String endsAfter) {
+    this.endsAfter = endsAfter;
+  }
+
   public Map<String, String> getMetadata() {
     return metadata;
   }
@@ -101,6 +111,7 @@ public class Subscription implements AbstractModel {
         ", planId='" + planId + '\'' +
         ", customerId='" + customerId + '\'' +
         ", frequency='" + frequency + '\'' +
+        ", endsAfter='" + endsAfter + '\'' +
         ", metadata=" + metadata +
         '}';
   }
