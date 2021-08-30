@@ -23,6 +23,10 @@ public class Customer implements AbstractModel {
   private String phone;
   private String state;
   private String zip;
+  @JsonProperty("last_4")
+  private String cardLast4;
+  @JsonProperty("bank_account_number_last_4")
+  private String bankLast4;
 
   private Map<String, String> metadata;
   @JsonProperty("methods")
@@ -130,6 +134,22 @@ public class Customer implements AbstractModel {
 
   public void setPaymentMethods(List<PaymentMethod> paymentMethods) {
     this.paymentMethods = paymentMethods;
+  }
+
+  public String getCardLast4() {
+    return cardLast4;
+  }
+
+  public void setCardLast4(String cardLast4) {
+    this.cardLast4 = cardLast4;
+  }
+
+  public String getBankLast4() {
+    return bankLast4;
+  }
+
+  public void setBankLast4(String bankLast4) {
+    this.bankLast4 = bankLast4;
   }
 
   @Override
