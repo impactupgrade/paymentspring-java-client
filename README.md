@@ -2,10 +2,6 @@
 
 A work-in-progress Java wrapper around the PaymentSpring API. *However, we have to be super blunt about this one. We would **not** recommend PaymentSpring as a payment gateway. However, throwing this out there anyway...*
 
-## Impact Upgrade
-
-Nonprofits often struggle with 1) constant distractions, 2) a tangled mess of data and tools that hold them back, and 3) really big ideas on the backburner. [Impact Upgrade](https://www.impactupgrade.com) is a software and consulting company, solely focused on closing these gaps. We upgrade your impact and get you back to your mission!
-
 ## Usage
 
 Add the following Maven dependency:
